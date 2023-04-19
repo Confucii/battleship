@@ -5,6 +5,8 @@ const Gameboard = () => {
     .fill()
     .map(() => Array(10).fill(0));
 
+  const ships = [];
+
   function boundsChecker(coordinate, length) {
     return coordinate + length > 10;
   }
@@ -12,6 +14,7 @@ const Gameboard = () => {
   function placeShip(x, y, length, axis) {
     const emptySquares = [];
     const ship = Ship(length);
+    ships.push(ship);
 
     if (axis === "column") {
       if (boundsChecker(x, length)) {
@@ -41,18 +44,30 @@ const Gameboard = () => {
       }
     }
 
-    emptySquares.forEach((elem) => {
-      grid[elem[0]][elem[1]] = ship;
+    emptySquares.forEach(([row, column]) => {
+      grid[row][column] = ship;
     });
 
     return true;
+  }
+
+  function receiveAttack(x, y) {
+    if (grid[x][y] === 0 || typeof grid[x][y] === "object") {
+      if (typeof grid[x][y] === "object") {
+        grid[x][y].hit();
+      }
+      grid[x][y] = -1;
+      return true;
+    }
+
+    return false;
   }
 
   function printGrid() {
     let output = "";
     grid.forEach((row) => {
       row.forEach((column) => {
-        if (column) {
+        if (typeof column === "object") {
           output += `${column?.length} `;
         } else {
           output += `${column} `;
@@ -63,9 +78,18 @@ const Gameboard = () => {
     console.log(output);
   }
 
+  function allShipsSunk() {
+    if (ships.length > 0) {
+      return ships.every((elem) => elem.isSunk());
+    }
+    return false;
+  }
+
   return {
     placeShip,
     printGrid,
+    receiveAttack,
+    allShipsSunk,
   };
 };
 
