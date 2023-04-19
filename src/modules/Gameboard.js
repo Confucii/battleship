@@ -52,15 +52,18 @@ const Gameboard = () => {
   }
 
   function receiveAttack(x, y) {
-    if (grid[x][y] === 0 || typeof grid[x][y] === "object") {
-      if (typeof grid[x][y] === "object") {
-        grid[x][y].hit();
-      }
+    let isHit = false;
+
+    if (grid[x][y] === 0) {
+      isHit = true;
       grid[x][y] = -1;
-      return true;
+    } else if (typeof grid[x][y] === "object") {
+      isHit = true;
+      grid[x][y].hit();
+      grid[x][y] = -2;
     }
 
-    return false;
+    return isHit;
   }
 
   function printGrid() {

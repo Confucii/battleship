@@ -44,7 +44,7 @@ describe("Hit register", () => {
   });
 });
 
-describe.only("Field win condition", () => {
+describe("Field win condition", () => {
   test("Works with empty board", () => {
     const gameboard = Gameboard();
     expect(gameboard.allShipsSunk()).toBe(false);
