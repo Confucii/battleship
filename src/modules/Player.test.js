@@ -59,8 +59,6 @@ describe("Ships can be spawned randomly", () => {
       playerTwo.makeRandomAttack(playerOne);
     }
 
-    playerOne.gameboard.printGrid();
-
     expect(playerOne.gameboard.allShipsSunk()).toBe(true);
   });
 });
