@@ -13,8 +13,6 @@ const Gameboard = () => {
 
   function placeShip(x, y, length, axis) {
     const emptySquares = [];
-    const ship = Ship(length);
-    ships.push(ship);
 
     if (axis === "column") {
       if (boundsChecker(x, length)) {
@@ -43,6 +41,9 @@ const Gameboard = () => {
         }
       }
     }
+
+    const ship = Ship(length);
+    ships.push(ship);
 
     emptySquares.forEach(([row, column]) => {
       grid[row][column] = ship;
