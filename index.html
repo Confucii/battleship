@@ -7,5 +7,252 @@
     <script src="./main.js" defer></script>
     <title>Battleship</title>
   </head>
-  <body></body>
+  <body>
+    <div class="gameboards">
+      <div class="player-gameboard">
+        <div data-row="1" class="row">
+          <div class="column" data-column="1"></div>
+          <div class="column" data-column="2"></div>
+          <div class="column" data-column="3"></div>
+          <div class="column" data-column="4"></div>
+          <div class="column" data-column="5"></div>
+          <div class="column" data-column="6"></div>
+          <div class="column" data-column="7"></div>
+          <div class="column" data-column="8"></div>
+          <div class="column" data-column="9"></div>
+          <div class="column" data-column="10"></div>
+        </div>
+        <div data-row="2" class="row">
+          <div class="column" data-column="1"></div>
+          <div class="column" data-column="2"></div>
+          <div class="column" data-column="3"></div>
+          <div class="column" data-column="4"></div>
+          <div class="column" data-column="5"></div>
+          <div class="column" data-column="6"></div>
+          <div class="column" data-column="7"></div>
+          <div class="column" data-column="8"></div>
+          <div class="column" data-column="9"></div>
+          <div class="column" data-column="10"></div>
+        </div>
+        <div data-row="3" class="row">
+          <div class="column" data-column="1"></div>
+          <div class="column" data-column="2"></div>
+          <div class="column" data-column="3"></div>
+          <div class="column" data-column="4"></div>
+          <div class="column" data-column="5"></div>
+          <div class="column" data-column="6"></div>
+          <div class="column" data-column="7"></div>
+          <div class="column" data-column="8"></div>
+          <div class="column" data-column="9"></div>
+          <div class="column" data-column="10"></div>
+        </div>
+        <div data-row="4" class="row">
+          <div class="column" data-column="1"></div>
+          <div class="column" data-column="2"></div>
+          <div class="column" data-column="3"></div>
+          <div class="column" data-column="4"></div>
+          <div class="column" data-column="5"></div>
+          <div class="column" data-column="6"></div>
+          <div class="column" data-column="7"></div>
+          <div class="column" data-column="8"></div>
+          <div class="column" data-column="9"></div>
+          <div class="column" data-column="10"></div>
+        </div>
+        <div data-row="5" class="row">
+          <div class="column" data-column="1"></div>
+          <div class="column" data-column="2"></div>
+          <div class="column" data-column="3"></div>
+          <div class="column" data-column="4"></div>
+          <div class="column" data-column="5"></div>
+          <div class="column" data-column="6"></div>
+          <div class="column" data-column="7"></div>
+          <div class="column" data-column="8"></div>
+          <div class="column" data-column="9"></div>
+          <div class="column" data-column="10"></div>
+        </div>
+        <div data-row="6" class="row">
+          <div class="column" data-column="1"></div>
+          <div class="column" data-column="2"></div>
+          <div class="column" data-column="3"></div>
+          <div class="column" data-column="4"></div>
+          <div class="column" data-column="5"></div>
+          <div class="column" data-column="6"></div>
+          <div class="column" data-column="7"></div>
+          <div class="column" data-column="8"></div>
+          <div class="column" data-column="9"></div>
+          <div class="column" data-column="10"></div>
+        </div>
+        <div data-row="7" class="row">
+          <div class="column" data-column="1"></div>
+          <div class="column" data-column="2"></div>
+          <div class="column" data-column="3"></div>
+          <div class="column" data-column="4"></div>
+          <div class="column" data-column="5"></div>
+          <div class="column" data-column="6"></div>
+          <div class="column" data-column="7"></div>
+          <div class="column" data-column="8"></div>
+          <div class="column" data-column="9"></div>
+          <div class="column" data-column="10"></div>
+        </div>
+        <div data-row="8" class="row">
+          <div class="column" data-column="1"></div>
+          <div class="column" data-column="2"></div>
+          <div class="column" data-column="3"></div>
+          <div class="column" data-column="4"></div>
+          <div class="column" data-column="5"></div>
+          <div class="column" data-column="6"></div>
+          <div class="column" data-column="7"></div>
+          <div class="column" data-column="8"></div>
+          <div class="column" data-column="9"></div>
+          <div class="column" data-column="10"></div>
+        </div>
+        <div data-row="9" class="row">
+          <div class="column" data-column="1"></div>
+          <div class="column" data-column="2"></div>
+          <div class="column" data-column="3"></div>
+          <div class="column" data-column="4"></div>
+          <div class="column" data-column="5"></div>
+          <div class="column" data-column="6"></div>
+          <div class="column" data-column="7"></div>
+          <div class="column" data-column="8"></div>
+          <div class="column" data-column="9"></div>
+          <div class="column" data-column="10"></div>
+        </div>
+        <div data-row="10" class="row">
+          <div class="column" data-column="1"></div>
+          <div class="column" data-column="2"></div>
+          <div class="column" data-column="3"></div>
+          <div class="column" data-column="4"></div>
+          <div class="column" data-column="5"></div>
+          <div class="column" data-column="6"></div>
+          <div class="column" data-column="7"></div>
+          <div class="column" data-column="8"></div>
+          <div class="column" data-column="9"></div>
+          <div class="column" data-column="10"></div>
+        </div>
+      </div>
+      <div class="enemy-gameboard">
+        <div data-row="1" class="row">
+          <div class="column" data-column="1"></div>
+          <div class="column" data-column="2"></div>
+          <div class="column" data-column="3"></div>
+          <div class="column" data-column="4"></div>
+          <div class="column" data-column="5"></div>
+          <div class="column" data-column="6"></div>
+          <div class="column" data-column="7"></div>
+          <div class="column" data-column="8"></div>
+          <div class="column" data-column="9"></div>
+          <div class="column" data-column="10"></div>
+        </div>
+        <div data-row="2" class="row">
+          <div class="column" data-column="1"></div>
+          <div class="column" data-column="2"></div>
+          <div class="column" data-column="3"></div>
+          <div class="column" data-column="4"></div>
+          <div class="column" data-column="5"></div>
+          <div class="column" data-column="6"></div>
+          <div class="column" data-column="7"></div>
+          <div class="column" data-column="8"></div>
+          <div class="column" data-column="9"></div>
+          <div class="column" data-column="10"></div>
+        </div>
+        <div data-row="3" class="row">
+          <div class="column" data-column="1"></div>
+          <div class="column" data-column="2"></div>
+          <div class="column" data-column="3"></div>
+          <div class="column" data-column="4"></div>
+          <div class="column" data-column="5"></div>
+          <div class="column" data-column="6"></div>
+          <div class="column" data-column="7"></div>
+          <div class="column" data-column="8"></div>
+          <div class="column" data-column="9"></div>
+          <div class="column" data-column="10"></div>
+        </div>
+        <div data-row="4" class="row">
+          <div class="column" data-column="1"></div>
+          <div class="column" data-column="2"></div>
+          <div class="column" data-column="3"></div>
+          <div class="column" data-column="4"></div>
+          <div class="column" data-column="5"></div>
+          <div class="column" data-column="6"></div>
+          <div class="column" data-column="7"></div>
+          <div class="column" data-column="8"></div>
+          <div class="column" data-column="9"></div>
+          <div class="column" data-column="10"></div>
+        </div>
+        <div data-row="5" class="row">
+          <div class="column" data-column="1"></div>
+          <div class="column" data-column="2"></div>
+          <div class="column" data-column="3"></div>
+          <div class="column" data-column="4"></div>
+          <div class="column" data-column="5"></div>
+          <div class="column" data-column="6"></div>
+          <div class="column" data-column="7"></div>
+          <div class="column" data-column="8"></div>
+          <div class="column" data-column="9"></div>
+          <div class="column" data-column="10"></div>
+        </div>
+        <div data-row="6" class="row">
+          <div class="column" data-column="1"></div>
+          <div class="column" data-column="2"></div>
+          <div class="column" data-column="3"></div>
+          <div class="column" data-column="4"></div>
+          <div class="column" data-column="5"></div>
+          <div class="column" data-column="6"></div>
+          <div class="column" data-column="7"></div>
+          <div class="column" data-column="8"></div>
+          <div class="column" data-column="9"></div>
+          <div class="column" data-column="10"></div>
+        </div>
+        <div data-row="7" class="row">
+          <div class="column" data-column="1"></div>
+          <div class="column" data-column="2"></div>
+          <div class="column" data-column="3"></div>
+          <div class="column" data-column="4"></div>
+          <div class="column" data-column="5"></div>
+          <div class="column" data-column="6"></div>
+          <div class="column" data-column="7"></div>
+          <div class="column" data-column="8"></div>
+          <div class="column" data-column="9"></div>
+          <div class="column" data-column="10"></div>
+        </div>
+        <div data-row="8" class="row">
+          <div class="column" data-column="1"></div>
+          <div class="column" data-column="2"></div>
+          <div class="column" data-column="3"></div>
+          <div class="column" data-column="4"></div>
+          <div class="column" data-column="5"></div>
+          <div class="column" data-column="6"></div>
+          <div class="column" data-column="7"></div>
+          <div class="column" data-column="8"></div>
+          <div class="column" data-column="9"></div>
+          <div class="column" data-column="10"></div>
+        </div>
+        <div data-row="9" class="row">
+          <div class="column" data-column="1"></div>
+          <div class="column" data-column="2"></div>
+          <div class="column" data-column="3"></div>
+          <div class="column" data-column="4"></div>
+          <div class="column" data-column="5"></div>
+          <div class="column" data-column="6"></div>
+          <div class="column" data-column="7"></div>
+          <div class="column" data-column="8"></div>
+          <div class="column" data-column="9"></div>
+          <div class="column" data-column="10"></div>
+        </div>
+        <div data-row="10" class="row">
+          <div class="column" data-column="1"></div>
+          <div class="column" data-column="2"></div>
+          <div class="column" data-column="3"></div>
+          <div class="column" data-column="4"></div>
+          <div class="column" data-column="5"></div>
+          <div class="column" data-column="6"></div>
+          <div class="column" data-column="7"></div>
+          <div class="column" data-column="8"></div>
+          <div class="column" data-column="9"></div>
+          <div class="column" data-column="10"></div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
