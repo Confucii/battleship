@@ -15,7 +15,6 @@ const Ship = (lengthInput) => {
   return {
     hit,
     isSunk,
-    length,
   };
 };
 
