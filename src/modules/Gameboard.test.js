@@ -19,7 +19,9 @@ describe("Ship placement", () => {
     const gameboard = Gameboard();
     expect(gameboard.placeShip(0, 0, 2, "row")).toBe(true);
     expect(gameboard.placeShip(0, 2, 2, "row")).toBe(false);
+    expect(gameboard.placeShip(1, 2, 2, "row")).toBe(false);
     expect(gameboard.placeShip(0, 2, 2, "column")).toBe(false);
+    expect(gameboard.placeShip(1, 2, 2, "column")).toBe(false);
   });
 
   test("The ship cannot be placed out of bounds", () => {

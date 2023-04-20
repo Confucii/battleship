@@ -17,13 +17,12 @@ const Gameboard = () => {
       grid?.[x + 1]?.[y],
       grid?.[x]?.[y + 1],
       grid?.[x]?.[y - 1],
+      grid?.[x - 1]?.[y - 1],
+      grid?.[x + 1]?.[y + 1],
+      grid?.[x + 1]?.[y - 1],
+      grid?.[x - 1]?.[y + 1],
     ];
-    return (
-      (squares[0] === 0 || squares[0] === undefined) &&
-      (squares[1] === 0 || squares[1] === undefined) &&
-      (squares[2] === 0 || squares[2] === undefined) &&
-      (squares[3] === 0 || squares[3] === undefined)
-    );
+    return squares.every((square) => square === 0 || square === undefined);
   }
 
   function placeShip(x, y, length, axis) {
