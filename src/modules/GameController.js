@@ -1,38 +1,22 @@
 import Player from "./Player";
+import ScreenController from "./ScreenController";
 
-const Game = () => {
+const GameController = () => {
+  const screen = ScreenController();
+
   const playerOne = Player();
   const playerTwo = Player();
-
-  let activePlayer = playerOne;
-  let inactivePlayer = playerTwo;
 
   playerOne.placeShipsRandomly();
   playerTwo.placeShipsRandomly();
 
-  function getActivePlayer() {
-    return activePlayer;
-  }
+  screen.renderOwnBoard(playerOne);
+  screen.renderEnemyBoard(playerTwo);
 
-  function getInactivePlayer() {
-    return inactivePlayer;
-  }
-
-  function getGameboard(player) {
-    return player.gameboard;
-  }
-
-  function switchPlayers() {
-    activePlayer = activePlayer === playerOne ? playerTwo : playerOne;
-    inactivePlayer = inactivePlayer === playerTwo ? playerOne : playerTwo;
-  }
-
-  return {
-    getActivePlayer,
-    getGameboard,
-    switchPlayers,
-    getInactivePlayer,
-  };
+  setTimeout(() => {
+    playerOne.makeRandomAttack(playerTwo);
+    screen.renderEnemyBoard(playerTwo);
+  }, 300);
 };
 
-export default Game;
+export default GameController;
