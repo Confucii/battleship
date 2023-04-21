@@ -42,7 +42,7 @@ const GameController = () => {
   });
 
   playerOne.placeShipsRandomly();
-  playerTwo.placeShipsRandomly();
+  playerTwo.gameboard.placeShip(0, 0, 1, "row");
 
   screen.renderOwnBoard(playerOne);
 };
