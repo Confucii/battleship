@@ -37,6 +37,22 @@ function ScreenController() {
     });
   }
 
+  function renderPlacementBoard(gameboard) {
+    gameboard.grid.forEach((row, indexRow) => {
+      row.forEach((column, indexColumn) => {
+        const square = document.querySelector(
+          `.placement-gameboard .row[data-row="${
+            indexRow + 1
+          }"] .column[data-column="${indexColumn + 1}"]`
+        );
+
+        if (typeof column === "object") {
+          square.style.backgroundColor = "grey";
+        }
+      });
+    });
+  }
+
   function renderResetOverlay(text, callback) {
     const bodySelector = document.querySelector("body");
 
@@ -61,6 +77,54 @@ function ScreenController() {
     modalDiv.appendChild(resetBtn);
 
     bodySelector.appendChild(modalDiv);
+  }
+
+  function renderPlacement() {
+    const bodySelector = document.querySelector("body");
+
+    const overlayDiv = document.createElement("div");
+    overlayDiv.classList.add("overlay");
+
+    bodySelector.appendChild(overlayDiv);
+
+    const placementDiv = document.createElement("div");
+    placementDiv.classList.add("placement");
+
+    const title = document.createElement("h2");
+    title.classList.add("placement-title");
+    title.textContent = "Place your ships!";
+
+    const rotateBtn = document.createElement("button");
+    rotateBtn.classList.add("rotate-btn");
+    rotateBtn.textContent = "Rotate";
+
+    const placementBoard = document.createElement("div");
+    placementBoard.classList.add("placement-gameboard");
+    for (let i = 1; i <= 10; i += 1) {
+      const row = document.createElement("div");
+      row.classList.add("row");
+      row.setAttribute("data-row", `${i}`);
+      for (let j = 1; j <= 10; j += 1) {
+        const column = document.createElement("div");
+        column.classList.add("column");
+        column.setAttribute("data-column", `${j}`);
+        row.appendChild(column);
+      }
+      placementBoard.appendChild(row);
+    }
+
+    placementDiv.appendChild(title);
+    placementDiv.appendChild(rotateBtn);
+    placementDiv.appendChild(placementBoard);
+
+    bodySelector.appendChild(placementDiv);
+  }
+
+  function deletePlacement() {
+    const overlayDiv = document.querySelector(".overlay");
+    const placementDiv = document.querySelector(".placement");
+    placementDiv.remove();
+    overlayDiv.remove();
   }
 
   function deleteResetOverlay() {
@@ -91,9 +155,12 @@ function ScreenController() {
   return {
     renderOwnBoard,
     renderEnemyBoard,
+    renderPlacementBoard,
     renderResetOverlay,
     deleteResetOverlay,
     clearBoards,
+    renderPlacement,
+    deletePlacement,
   };
 }
 

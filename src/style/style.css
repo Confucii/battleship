@@ -26,7 +26,8 @@ body {
 }
 
 .player-gameboard,
-.enemy-gameboard {
+.enemy-gameboard,
+.placement-gameboard {
   height: fit-content;
   border: 1px solid black;
 }
@@ -52,6 +53,40 @@ body {
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+.placement {
+  background-color: white;
+  padding: 20px;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  width: 60%;
+  height: 80%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.rotate-btn,
+.placement-title {
+  font-size: 3rem;
+}
+
+.rotate-btn {
+  border: none;
+  padding: 0px 10px;
+  background-color: black;
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+.rotate-btn:hover {
+  transform: scale(1.1);
 }
 
 .modal {

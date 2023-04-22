@@ -1,5 +1,6 @@
 import Player from "./Player";
 import ScreenController from "./ScreenController";
+import StartScreen from "./StartScreen";
 
 const GameController = () => {
   const screen = ScreenController();
@@ -7,13 +8,14 @@ const GameController = () => {
   let playerOne = Player();
   let playerTwo = Player();
 
+  StartScreen(screen, playerOne);
+
   function reset() {
     screen.deleteResetOverlay();
     playerOne = Player();
     playerTwo = Player();
+    StartScreen(screen, playerOne);
     screen.clearBoards();
-    playerOne.placeShipsRandomly();
-    screen.renderOwnBoard(playerOne);
     playerTwo.placeShipsRandomly();
     screen.renderEnemyBoard(playerTwo);
   }
@@ -41,8 +43,7 @@ const GameController = () => {
     });
   });
 
-  playerOne.placeShipsRandomly();
-  playerTwo.gameboard.placeShip(0, 0, 1, "row");
+  playerTwo.placeShipsRandomly();
 
   screen.renderOwnBoard(playerOne);
 };
